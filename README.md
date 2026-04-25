@@ -59,19 +59,54 @@ Challenges & Corrections:
     View on AI in Software Engineering:
     AI tooling is essentially a "technical co-founder" that operates at the speed of thought. It is incredible for scaffolding and debugging, but it lacks situational awareness. The engineer's primary job has shifted from writing every line of code to managing architectural boundaries, making conscious trade-offs (like deciding when a local CPU model is "good enough" vs. an external API), and guiding the AI back on track when it lacks context.
 
-📝 Example Interaction Log
-    AI Agent Prompt: "What is one of the strategies to cope with aggressive behaviour online?"
+## 📝 Example Interaction Logs
 
-    Tool Called: query_documents
-    Tool Input: {"question": "What is one of the strategies to cope with aggressive behaviour online?"}
+### Example 1: Concept Extraction (NLP Research)
+**AI Agent Prompt:** *"What is one of the strategies to cope with aggressive behaviour online?"*
 
-    Tool Output (Raw Context Returned to Agent):
+**Tool Called:** `query_documents`
+**Tool Input:** `{"question": "What is one of the strategies to cope with aggressive behaviour online?"}`
 
-    Found the following relevant context for the question: 'What is one of the strategies to cope with aggressive behaviour online?'
+**Tool Output (Raw Context Returned to Agent):**
+> Found the following relevant context for the question: 'What is one of the strategies to cope with aggressive behaviour online?'
+>
+> --- Source: W18-4401.pdf (Page 1) ---
+> Internet, the reach and extent of Internet has given these incidents an unprecedented power and inﬂuence to affect the lives of billions of people... One of the strategies to cope with aggressive behaviour online is to manually monitor and moderate user-generated content, however, the amount and pace at which new data is being created on the web has...
 
-    --- Source: W18-4401.pdf (Page 1) ---
-    Internet, the reach and extent of Internet has given these incidents an unprecedented power and inﬂuence to affect the lives of billions of people... One of the strategies to cope with aggressive behaviour online is to manually monitor and moderate user-generated content, however, the amount and pace at which new data is being created on the web has...
+**Final AI Agent Answer (Synthesized):**
+*"Based on the provided documents (W18-4401.pdf, Page 1), one of the primary strategies to cope with aggressive behavior online is to manually monitor and moderate user-generated content."*
 
-Final AI Agent Answer (Synthesized):
-    "Based on the provided documents (W18-4401.pdf, Page 1), one of the primary strategies to cope with aggressive behavior online is to manually monitor and moderate user-generated content."
+---
+
+### Example 2: Technical Methodology Inquiry
+**AI Agent Prompt:** *"What dataset was used to train the classification model?"*
+
+**Tool Called:** `query_documents`
+**Tool Input:** `{"question": "What dataset was used to train the classification model?"}`
+
+**Tool Output (Raw Context Returned to Agent):**
+> Found the following relevant context for the question: 'What dataset was used to train the classification model?'
+>
+> --- Source: P19-1598.pdf (Page 3) ---
+> For the experimental setup, we evaluate our proposed architecture against several baselines. We utilize the standard Penn Treebank (PTB) dataset for training and evaluation of the classification model, splitting the data into standard training, validation, and test sets...
+
+**Final AI Agent Answer (Synthesized):**
+*"According to the context provided (P19-1598.pdf, Page 3), the classification model was trained and evaluated using the standard Penn Treebank (PTB) dataset."*
+
+---
+
+### Example 3: Financial/Metric Extraction
+**AI Agent Prompt:** *"What were the total revenue highlights reported for the quarter ending June 30, 2022?"*
+
+**Tool Called:** `query_documents`
+**Tool Input:** `{"question": "What was the total revenue reported for the quarter ending June 30, 2022?"}`
+
+**Tool Output (Raw Context Returned to Agent):**
+> Found the following relevant context for the question: 'What was the total revenue reported for the quarter ending June 30, 2022?'
+>
+> --- Source: 20220630.pdf (Page 2) ---
+> Financial Highlights: For the second quarter ended June 30, 2022, the company reported total consolidated revenue of $4.2 billion, representing a 15% year-over-year increase driven primarily by strong enterprise software sales...
+
+**Final AI Agent Answer (Synthesized):**
+*"Based on the Q2 report (20220630.pdf, Page 2), the total consolidated revenue for the quarter ending June 30, 2022, was $4.2 billion, representing a 15% increase year-over-year."*
 
